@@ -1,0 +1,23 @@
+ru:
+  activerecord:
+    models:
+      skin: 'Кожа'
+    attributes:
+      skin: 
+        name: 'Номер'
+        sname: 'Название'
+        description: 'Описание'
+        video: 'Youtube ID'
+        images: 'Фоточки'
+        cover: 'Обложка'
+      type: 
+        name: 'Название'
+      color: 
+        name: 'Название'  
+      hardness: 
+        name: 'Название'  
+      target: 
+        name: 'Название'            
+    errors:
+      messages: 
+        blank: 'заполни.'    

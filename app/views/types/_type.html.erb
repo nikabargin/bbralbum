@@ -1,0 +1,11 @@
+<h3><%= type.name %>
+
+<%= link_to edit_type_path(type) do %>
+	<i class="fas fa-cog"></i>
+<% end %>
+
+<%= link_to type_path(type), method: :delete do %>
+	<i class="fas fa-trash-alt"></i>
+<% end %>
+
+</h3>

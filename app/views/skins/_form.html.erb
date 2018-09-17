@@ -1,0 +1,88 @@
+<% if @skin.errors.any? %>
+	<div class="alert alert-danger">
+		<h5>
+			<ul>
+				<li>Слышь</li>
+				<% @skin.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</h5>
+	</div>
+<% end %>
+
+<div class="container form-container">
+	<div class="row justify-content-center">
+		<div class="col-12 col-sm-6">
+			<%= form_for @skin do |f| %>
+				<div class="form-control">
+					<%= f.label :name %>:
+					<%= f.text_field :name %>
+				</div>
+
+				<div class="form-control">
+					<%= f.label :sname %>:
+					<%= f.text_field :sname %>
+				</div>
+				
+				
+				<div class="form-control">
+					<%= f.label :description %>:<br>
+					<%= f.text_area :description %>
+				</div>
+				<div class="download">
+					<div class="form-control">
+						<%= f.label 'Обложка:' %>
+						<%= f.file_field :cover, id: 'control1' %>
+						<button id="clear1">Очистить</button>
+					</div>
+					
+					
+					<div class="form-control">
+						<%= f.label 'Фотки:' %>
+						<%= f.file_field :images, multiple: true, id: 'control2' %>
+						<button id="clear2">Очистить</button>
+					</div>
+
+					<div class="form-control">
+						<%= f.label :video %>:
+						<%= f.text_field :video %>
+					</div>
+					
+				</div>
+				<div class="form-control">
+					<%= collection_select(:skin, :type_id, Type.all, :id, :name, {}, { :multiple => false}) %>
+				</div>
+
+				<div class="form-control">
+					<%= collection_select(:skin, :target_id, Target.all, :id, :name, {}, { :multiple => false}) %>
+				</div>
+
+				<div class="form-control">
+					<%= collection_select(:skin, :color_id, Color.all, :id, :name, {}, { :multiple => false}) %>
+				</div>
+
+				<div class="form-control">
+					<%= collection_select(:skin, :hardness_id, Hardness.all, :id, :name, {}, { :multiple => false}) %>
+				</div>
+
+				<div class="form-control">
+					<%= f.submit 'Сохранить', class: 'skin-button' %>
+					<%= link_to 'Отмена', skins_path, class: 'skin-button' %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<script>
+	$("#clear1").click(function(event){
+	  event.preventDefault();
+	  $("#control1").replaceWith("<input id='control' type='file' name='skin[cover]'>");
+	});
+
+	$("#clear2").click(function(event){
+	  event.preventDefault();
+	  $("#control2").replaceWith('<input multiple="multiple" type="file" name="skin[images][]" id="skin_images">');
+	});
+</script>

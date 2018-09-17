@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-6 text-center">
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-control login-input">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="form-control login-input">
+    <%= f.label "Секретный код" %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if false %>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "  (つ . •́ _ʖ •̀ .)つ", class: 'skin-button' %>
+  </div>
+<% end %>
+
+<% if false %>
+
+<%= render "devise/shared/links" %>
+
+<% end %>
+</div>
+</div>
+</div>

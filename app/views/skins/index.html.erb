@@ -1,0 +1,125 @@
+<div class="navbar-expand-md" id="stick-head">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i> Фильтры
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="navbar-nav">
+<%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    <%= f.text_field(
+      :search_query,
+      class: 'filterrific-periodically-observed'
+    ) %>
+  </div>
+  <div class="filter-wrapper">
+    <%= f.select(
+      :with_type_id,
+      @filterrific.select_options[:with_type_id],
+      { include_blank: 'Любой тип' }
+    ) %>
+    <% if user_signed_in? %>
+    
+    <%=link_to types_path do %>
+      <i class="fas fa-cog" title="Настроить"></i>
+    <% end %>
+
+    <% end %>
+  </div>
+  <div class="filter-wrapper">
+    <%= f.select(
+      :with_color_id,
+      @filterrific.select_options[:with_color_id],
+      { include_blank: 'Любой цвет' }
+    ) %>
+    <% if user_signed_in? %>
+
+    <%=link_to colors_path do %>
+      <i class="fas fa-cog" title="Настроить"></i>
+    <% end %>
+
+    <% end %>
+  </div>
+  <div class="filter-wrapper">
+    <%= f.select(
+      :with_hardness_id,
+      @filterrific.select_options[:with_hardness_id],
+      { include_blank: 'Любая жёсткость' }
+    ) %>
+    <% if user_signed_in? %>
+
+    <%=link_to hardnesses_path do %>
+      <i class="fas fa-cog" title="Настроить"></i>
+    <% end %>
+
+    <% end %>
+  </div>
+  <div class="filter-wrapper">
+    <%= f.select(
+      :with_target_id,
+      @filterrific.select_options[:with_target_id],
+      { include_blank: 'Любое предназначение' }
+    ) %>
+    <% if user_signed_in? %>
+
+    <%=link_to targets_path do %>
+      <i class="fas fa-cog" title="Настроить"></i>
+    <% end %>
+
+    <% end %>
+  </div>
+  <div>
+    <%= link_to(
+      'Сбросить все',
+      reset_filterrific_url,
+    ) %>
+  </div>
+  <% if user_signed_in? %>
+  <div>
+    <%=link_to new_skin_path do %>
+      <i class="fas fa-church" title="Новая кожа"></i>
+    <% end %>
+  </div>
+  <% end %>
+
+  <% if user_signed_in? %>
+      <span>
+      <%= link_to('Выход', destroy_user_session_path, method: :delete) %>        
+      </span>
+    <% end %>
+
+  
+
+  <%# add an automated spinner to your form when the list is refreshed %>
+  <%= render_filterrific_spinner %>
+
+<% end %>
+
+
+</div>
+</div>
+
+</div>
+
+<%= render(
+  partial: 'skins/list',
+  locals: { skins: @skins }
+) %>
+
+<script>
+  window.onscroll = function() {myFunction()};
+
+// Get the header
+var header = document.getElementById("stick-head");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>

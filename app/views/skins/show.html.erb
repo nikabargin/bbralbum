@@ -1,0 +1,86 @@
+
+
+
+<div class="skin-name-wrapper" id="stick-head">
+	
+	<div class="back">
+		<%= link_to skins_path do %>
+			<i class="fas fa-long-arrow-alt-left"></i> Все кожи
+		<% end %>
+	</div>
+	<% if user_signed_in? %>
+	<div class="settings">
+		<%= link_to edit_skin_path(@skin) do %>
+			<i class="fas fa-cog"></i>
+		<% end %>
+
+		<%= link_to skin_path(@skin), method: :delete, data: { confirm: "Точно хочешь удалить?"} do %>
+			<i class="fas fa-trash-alt"></i>
+		<% end %>
+	</div>
+	<% end %>
+	<h1 class="skin-name"><%= @skin.name %> <%= @skin.sname %></h1>
+</div>
+
+	<div class="next-block" style="background: url(<%= rails_blob_url(@skin.cover) %>) center center; height: 300px; background-size: cover; width: 100%; background-attachment: fixed; margin-bottom: 25px;"></div>
+
+<div class="container">
+	<div class="row paddings">
+		<div class="col-12 col-lg-6">
+			<iframe width="100%" height="315" src="https://www.youtube.com/embed/<%= @skin.video %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="video"></iframe>
+		</div>
+		<div class="col-12 col-lg-5">
+			<p class="skin-description"> <%= @skin.description %> </p>
+			<ul class="skin-attributes">
+				<li><strong>Тип выделки:</strong> <%= @skin.type.name %></li>
+				<li><strong>Жёсткость:</strong> <%= @skin.hardness.name %></li>
+				<li><strong>Предназначение:</strong> <%= @skin.target.name %></li>
+				<li><strong>Цвет:</strong> <%= @skin.color.name %></li>
+			</ul>
+		</div>
+	</div>
+	<%= progressive_render do %>
+	<div class="row">
+		<div class="col-12">	
+	    	<ul class="skin-thumbs">
+	    		<li class="extra-image">
+						<%= link_to image_tag(@skin.thumbnail(@skin.cover)), rails_blob_path(@skin.cover, only_path: true), "data-fancybox" => 'gallery' %>
+				</li>
+				<% @skin.images.each do |image| %>
+					<% if image.blob.present? %>
+					<li class="extra-image">
+						<%= link_to image_tag(@skin.thumbnail(image)), rails_blob_path(image, only_path: true), "data-fancybox" => 'gallery' %>
+						<% if user_signed_in? %>
+						<%= link_to delete_image_attachment_skin_url(image.signed_id),
+                method: :delete, class: "trash", remote: true do %>
+					<i class="fas fa-trash-alt"></i>
+                <% end %>
+                <% end %>
+					</li>
+					<% end %>
+				<% end %>
+			</ul>
+		</div>	
+	</div>
+	<% end %>
+</div>
+
+<script>
+	window.onscroll = function() {myFunction()};
+
+// Get the header
+var header = document.getElementById("stick-head");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+

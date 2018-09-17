@@ -1,0 +1,24 @@
+<div class="skin-name-wrapper">
+	<div class="back">
+		<%= link_to skins_path do %>
+			<i class="fas fa-long-arrow-alt-left"></i> Все кожи
+		<% end %>
+	</div>
+
+	<h1 class="skin-name filter-name">Фильтры цвета</h1>
+</div>
+
+
+
+
+
+
+
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-12 col-sm-6 text-center">
+				<%= render @hardnesses %> <br>
+				<%=link_to 'ДОБАВИТЬ ФИЛЬТР', new_hardness_path, class: 'skin-button' %>
+		</div>
+	</div>
+</div>

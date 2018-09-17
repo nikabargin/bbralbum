@@ -1,0 +1,2 @@
+module HardnessesHelper
+end

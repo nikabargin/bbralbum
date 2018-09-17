@@ -1,0 +1,6 @@
+<h2><%= link_to skin.name, skin_path(skin) %></h2>
+<div>
+	<%= link_to image_tag(skin.cover, style:'width:200px'), skin_path(skin) %>
+</div>
+<%= link_to 'Изменить', edit_skin_path(skin) %>
+<%= link_to 'Удалить', skin_path(skin), method: :delete, data: { confirm: "Точно хочешь удалить?"}, remote: true %>
