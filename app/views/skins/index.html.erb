@@ -6,9 +6,11 @@
     <div class="navbar-nav">
 <%= form_for_filterrific @filterrific do |f| %>
   <div>
+    №
     <%= f.text_field(
       :search_query,
-      class: 'filterrific-periodically-observed'
+      class: 'filterrific-periodically-observed',
+      style: 'width: 40px; height: 25px; background: #000; border: none; border-bottom: 0.5px solid #fff; color: #fff; margin-right: 20px;'
     ) %>
   </div>
   <div class="filter-wrapper">
@@ -88,10 +90,10 @@
     <% end %>
 
   
-
+  <% if false %>
   <%# add an automated spinner to your form when the list is refreshed %>
   <%= render_filterrific_spinner %>
-
+  <% end %>
 <% end %>
 
 

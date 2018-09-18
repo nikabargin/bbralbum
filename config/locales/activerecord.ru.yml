@@ -4,7 +4,7 @@ ru:
       skin: 'Кожа'
     attributes:
       skin: 
-        name: 'Номер'
+        name: '№'
         sname: 'Название'
         description: 'Описание'
         video: 'Youtube ID'
