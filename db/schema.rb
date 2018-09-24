@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_07_105023) do
+ActiveRecord::Schema.define(version: 2018_09_24_151954) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -42,16 +45,17 @@ ActiveRecord::Schema.define(version: 2018_09_07_105023) do
   end
 
   create_table "skins", force: :cascade do |t|
-    t.string "name"
+    t.integer "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "type_id"
-    t.integer "color_id"
-    t.integer "target_id"
-    t.integer "hardness_id"
+    t.bigint "type_id"
+    t.bigint "color_id"
+    t.bigint "target_id"
+    t.bigint "hardness_id"
     t.string "sname"
     t.string "video"
+    t.text "targets"
     t.index ["color_id"], name: "index_skins_on_color_id"
     t.index ["hardness_id"], name: "index_skins_on_hardness_id"
     t.index ["target_id"], name: "index_skins_on_target_id"
@@ -78,4 +82,8 @@ ActiveRecord::Schema.define(version: 2018_09_07_105023) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "skins", "colors"
+  add_foreign_key "skins", "hardnesses"
+  add_foreign_key "skins", "targets"
+  add_foreign_key "skins", "types"
 end

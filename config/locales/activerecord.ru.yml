@@ -10,6 +10,7 @@ ru:
         video: 'Youtube ID'
         images: 'Фоточки'
         cover: 'Обложка'
+        targets: 'Предназначение'
       type: 
         name: 'Название'
       color: 

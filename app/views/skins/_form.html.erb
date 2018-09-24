@@ -55,15 +55,27 @@
 				</div>
 
 				<div class="form-control">
-					<%= collection_select(:skin, :target_id, Target.all, :id, :name, {}, { :multiple => false}) %>
-				</div>
-
-				<div class="form-control">
 					<%= collection_select(:skin, :color_id, Color.all, :id, :name, {}, { :multiple => false}) %>
 				</div>
 
 				<div class="form-control">
 					<%= collection_select(:skin, :hardness_id, Hardness.all, :id, :name, {}, { :multiple => false}) %>
+				</div>
+				
+				<div class="row targets-adding">
+					<div class="col-6">
+						<div class="form-control" style="padding-top: 0;">
+							<%= f.label :targets %>:<br>
+							<%= f.text_area :targets, id: "text_tag_input" %>
+						</div>
+					</div>
+					<div class="col-6">
+						<ul class="tags_select">
+							<% Target.all.each do |target| %>
+								<li value="<%= target.name %>"><%= target.name %></li>
+							<% end %>
+						</ul>
+					</div>
 				</div>
 
 				<div class="form-control">
@@ -84,5 +96,14 @@
 	$("#clear2").click(function(event){
 	  event.preventDefault();
 	  $("#control2").replaceWith('<input multiple="multiple" type="file" name="skin[images][]" id="skin_images">');
+	});
+</script>
+
+<script>
+	$('.tags_select li').click(function() {
+	    var value = $(this).text();
+	    var input = $('#text_tag_input');
+	    input.val(input.val() + value + ', ');
+	    return false;
 	});
 </script>

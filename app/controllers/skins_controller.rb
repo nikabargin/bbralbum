@@ -10,7 +10,7 @@ class SkinsController < ApplicationController
         with_type_id: Type.options_for_select,
         with_color_id: Color.options_for_select,
         with_hardness_id: Hardness.options_for_select,
-        with_target_id: Target.options_for_select
+        with_target: Target.options_for_select
       }
     ) or return
     @skins = @filterrific.find.page(params[:page]).per_page(9).order('created_at DESC')
@@ -79,6 +79,6 @@ class SkinsController < ApplicationController
   end
 
   def skin_params
-  	params.require(:skin).permit(:name, :sname, :video, :description, :cover, :type_id, :color_id, :hardness_id, :target_id, images: [])
+  	params.require(:skin).permit(:name, :sname, :video, :description, :cover, :type_id, :color_id, :hardness_id, :targets, images: [])
   end
 end

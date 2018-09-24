@@ -5,6 +5,9 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <div class="navbar-nav">
 <%= form_for_filterrific @filterrific do |f| %>
+  <div class="spinner" style="position: absolute; left: 10px;">
+    <%= render_filterrific_spinner %>
+  </div>
   <div>
     №
     <%= f.text_field(
@@ -57,8 +60,8 @@
   </div>
   <div class="filter-wrapper">
     <%= f.select(
-      :with_target_id,
-      @filterrific.select_options[:with_target_id],
+      :with_target,
+      @filterrific.select_options[:with_target],
       { include_blank: 'Любое предназначение' }
     ) %>
     <% if user_signed_in? %>
@@ -92,7 +95,7 @@
   
   <% if false %>
   <%# add an automated spinner to your form when the list is refreshed %>
-  <%= render_filterrific_spinner %>
+  
   <% end %>
 <% end %>
 

@@ -3,9 +3,10 @@ class Skin < ApplicationRecord
 	has_many_attached :images
 	after_create :scale_cover
 
+	default_scope { order(name: :asc)}
+
 	belongs_to :type
 	belongs_to :color
-	belongs_to :target
 	belongs_to :hardness
 
 	validates :name, :description, :video, presence: true
@@ -16,7 +17,7 @@ class Skin < ApplicationRecord
 	 available_filters: [
 	   :with_type_id,
 	   :with_color_id,
-	   :with_target_id,
+	   :with_target,
 	   :with_hardness_id,
 	   :search_query
 	 ]
@@ -48,8 +49,8 @@ class Skin < ApplicationRecord
 	  where(color_id: [*color_ids])
 	}
 
-	scope :with_target_id, lambda { |target_ids|
-	  where(target_id: [*target_ids])
+	scope :with_target, lambda { |target|
+	  where("targets ILIKE LOWER(?)", "%#{Target.find(target).name}%")
 	}
 
 	scope :with_hardness_id, lambda { |hardness_ids|
