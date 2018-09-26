@@ -140,7 +140,7 @@ function myFunction() {
   // Submit ajax request
   $.ajax({
     url: url,
-    beforeSend: function() { $('#filterrific_results').empty() },
+    beforeSend: function() { $('#content-block').empty() },
     data: form.serialize(),
     type: 'GET',
     dataType: 'script'
