@@ -2,7 +2,7 @@
   render(partial: 'skins/list', locals: { skins: @skins })
 ) %>
 
-$('#filterrific_results').append('<%= js %>');
+$('#content-block').append('<%= js %>');
 <% if @skins.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(@skins) %>');
 <% else %>

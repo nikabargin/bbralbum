@@ -105,11 +105,12 @@
 
 </div>
 
-<%= render(
-  partial: 'skins/list',
-  locals: { skins: @skins }
-) %>
-
+<div id="content-block">
+  <%= render(
+    partial: 'skins/list',
+    locals: { skins: @skins }
+  ) %>
+</div>
 <script>
   window.onscroll = function() {myFunction()};
 
@@ -148,19 +149,4 @@ function myFunction() {
   });
 };
 
-Filterrific.init = function() {
-  // Add change event handler to all Filterrific filter inputs.
-  $('#filterrific_filter').on(
-    "change",
-    ":input",
-    Filterrific.submitFilterForm
-  );
-
-  // Add periodic observer to selected inputs.
-  // Use this for text fields you want to observe for change, e.g., a search input.
-  $(".filterrific-periodically-observed").filterrific_observe_field(
-    0.5,
-    Filterrific.submitFilterForm
-  );
-};
 </script>
