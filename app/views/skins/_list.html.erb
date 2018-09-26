@@ -1,11 +1,11 @@
 <% if skins.present? %>
-<div class="container-fluid" id="skins">
-    <div  class="row" id="filterrific_results">
-        <%= render @skins %>
+<div class="container-fluid" id="filterrific_results">
+    <div  class="row">
+      <%= render @skins %>
     </div>
 </div>
 
-<div class="hiding">
+<div id="hiding">
   <%= will_paginate skins %>
 </div>
 
