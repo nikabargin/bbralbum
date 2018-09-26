@@ -26,19 +26,9 @@ class Skin < ApplicationRecord
 	scope :search_query, lambda { |query|
 	  return nil  if query.blank?
 
-	  terms = query.to_s.split(/\s+/)
-
-	  terms = terms.map { |e|
-	    (e.gsub('*', '%') + '%').gsub(/%+/, '%')
-	  }
-
-	  num_or_conds = 2
-	  where(
-	    terms.map { |term|
-	      "(LOWER(skins.name) LIKE ? OR LOWER(skins.sname) LIKE ?)"
-	    }.join(' AND '),
-	    *terms.map { |e| [e] * num_or_conds }.flatten
-	  )
+	  new_query = query.to_i
+  	  where("skins.name = ?", new_query)
+	  
 	}
 
 	scope :with_type_id, lambda { |type_ids|

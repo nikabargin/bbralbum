@@ -1,10 +1,10 @@
 <% js = escape_javascript(
   render(partial: 'skins/list', locals: { skins: @skins })
 ) %>
-$("#filterrific_results").html("<%= js %>");
 
+$('#filterrific_results').append('<%= j render(@skins) %>');
 <% if @skins.next_page %>
-    $('.pagination').replaceWith('<%= j will_paginate(@skins) %>');
-  <% else %>
-    $('.pagination').remove();
-   <% end %>
+  $('.pagination').replaceWith('<%= j will_paginate(@skins) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

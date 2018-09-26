@@ -1,33 +1,13 @@
 <% if skins.present? %>
 <div class="container-fluid" id="skins">
     <div  class="row" id="filterrific_results">
-        <% skins.each_with_index do |skin,i| %>
-          <div class="col-12 col-md-6 col-xl-4">
-            <div class="skin-wrapper">
-              <%= link_to skin_path(skin) do %>
-                <div style="background: url(<%= rails_blob_url(skin.cover) %>) ; width: 100%; border-radius: 5px;" class="skin-block">
-                    <h1>№<%= skin.name %></h1>
-                </div>
-              <% end %>
-              <% if user_signed_in? %>
-                <div class="skin-settings">
-                  <%= link_to edit_skin_path(skin) do %>
-                    <i class="fas fa-cog"></i> 
-                  <% end %>
-                  <%= link_to skin_path(skin), method: :delete, data: { confirm: "Точно хочешь удалить?"} do %>
-                    <i class="fas fa-trash-alt"></i>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          </div>  
-        <% end %>
+        <%= render @skins %>
     </div>
 </div>
 
-<div class="hiding">
+
   <%= will_paginate skins %>
-</div>
+
 
 <% else %>
 <div class="text-center" style="width: 100%; margin-top: 20px;">
