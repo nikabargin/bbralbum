@@ -28,3 +28,4 @@
 /config/database.yml
 /config/secrets.yml
 /config/credentials.yml.enc
+/db/schema.rb
