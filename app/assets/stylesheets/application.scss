@@ -103,6 +103,11 @@ strong {
 	margin-bottom: 30px;
 }
 
+@media (min-width: 1800px) {
+	.skin-block	{
+		height: 350px;
+	}
+}
 
 .skin-block h1 {
 	font-weight: 700;
