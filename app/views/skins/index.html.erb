@@ -173,13 +173,14 @@ $(document).on("keypress", 'form', function (e) {
     }
   });
 
-$(document).on("click", '.navbar-toggler', function () {
-  if ($('.navbar-toggler span').text() == 'Фильтры')
-    $('.navbar-toggler span').text('Свернуть')
-  else 
-    $('.navbar-toggler span').text('Фильтры')
+$(window).ready( function() {
+  $(document).on("click", '.navbar-toggler', function () {
+    if ($('.navbar-toggler span').text() == 'Фильтры')
+      $('.navbar-toggler span').text('Свернуть')
+    else 
+      $('.navbar-toggler span').text('Фильтры')
+  });
 });
-
 </script>
 
 <script>
