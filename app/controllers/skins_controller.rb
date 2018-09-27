@@ -13,7 +13,7 @@ class SkinsController < ApplicationController
         with_target: Target.options_for_select
       }
     ) or return
-    @skins = @filterrific.find.page(params[:page]).per_page(6)
+    @skins = @filterrific.find.page(params[:page]).per_page(12)
 
 
 
