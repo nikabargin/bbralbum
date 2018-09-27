@@ -152,7 +152,7 @@ function myFunction() {
 
 <script>
   Filterrific.submitFilterForm = function(){
-  var form = $("#filterrific_filter"),
+  var form = $(this).parents("form"),
       url = form.attr("action");
   // turn on spinner
   $('.filterrific_spinner').show();
