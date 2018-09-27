@@ -1,6 +1,6 @@
 
 <div class="navbar-expand-md" id="stick-head">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="changeToggle()">
     <i class="fas fa-bars"></i> <span>Фильтры</span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -191,12 +191,10 @@ $(document).on("keypress", 'form', function (e) {
 </script>
 
 <script>
-  $(document).ready( function() {
-    $(document).on("click", '.navbar-toggler', function () {
-      if ($('.navbar-toggler span').text() == 'Фильтры')
+  function changeToggle() {
+    if ($('.navbar-toggler span').text() == 'Фильтры')
         $('.navbar-toggler span').text('Свернуть')
       else 
         $('.navbar-toggler span').text('Фильтры')
-    });
-  });
+    };
 </script>
