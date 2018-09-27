@@ -171,12 +171,19 @@ function myFunction() {
 </script>
 
 <script>
-  $(document).on("keypress", 'form', function (e) {
-    var code = e.keyCode || e.which;
-    if (code == 13) {
-        e.preventDefault();
-        return false;
-    }
-});
+
+$(document).on("keypress", 'form', function (e) {
+      var code = e.keyCode || e.which;
+      if (code == 13) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          $('.navbar-toggler').click();
+          return false;
+        } else {
+          e.preventDefault();
+          return false;
+        }
+      }
+    });
 </script>
 
