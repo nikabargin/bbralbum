@@ -19,3 +19,4 @@
 //= require filterrific/filterrific-jquery
 //= require_tree .
 //= require progressive_render
+
