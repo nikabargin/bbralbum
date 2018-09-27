@@ -1,21 +1,3 @@
-<script>
-  (function() {
-  jQuery(function() {
-    if ($('.pagination').length) {
-      $(window).scroll(function() {
-        var url;
-        url = $('.pagination .next_page').attr('href');
-        if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-          $('.pagination').text("Fetching more products...");
-          return $.getScript(url);
-        }
-      });
-      return $(window).scroll();
-    }
-  });
-
-}).call(this);
-</script>
 
 <div class="navbar-expand-md" id="stick-head">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -182,3 +164,21 @@ $(document).on("keypress", 'form', function (e) {
 
 </script>
 
+<script>
+  (function() {
+  jQuery(function() {
+    if ($('.pagination').length) {
+      $(window).scroll(function() {
+        var url;
+        url = $('.pagination .next_page').attr('href');
+        if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+          $('.pagination').text("Fetching more products...");
+          return $.getScript(url);
+        }
+      });
+      return $(window).scroll();
+    }
+  });
+
+}).call(this);
+</script>
