@@ -165,13 +165,13 @@ $(document).on("keypress", 'form', function (e) {
 </script>
 
 <script>
-  $(document).ready( function() {
+  $(window).ready( function() {
     if ($('.pagination').length) {
       $(window).scroll(function() {
         var url;
         url = $('.pagination .next_page').attr('href');
-        if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-          $('.pagination').text("Fetching more products...");
+        if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 100) {
+          $('.pagination').text("Загружются ещё кожи...");
           return $.getScript(url);
         }
       });
