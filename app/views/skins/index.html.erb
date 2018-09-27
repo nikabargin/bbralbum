@@ -172,15 +172,6 @@ $(document).on("keypress", 'form', function (e) {
       }
     }
   });
-
-$(window).ready( function() {
-  $(document).on("click", '.navbar-toggler', function () {
-    if ($('.navbar-toggler span').text() == 'Фильтры')
-      $('.navbar-toggler span').text('Свернуть')
-    else 
-      $('.navbar-toggler span').text('Фильтры')
-  });
-});
 </script>
 
 <script>
@@ -196,5 +187,16 @@ $(window).ready( function() {
       });
       return $(window).scroll();
     }
+  });
+</script>
+
+<script>
+  $(document).ready( function() {
+    $(document).on("click", '.navbar-toggler', function () {
+      if ($('.navbar-toggler span').text() == 'Фильтры')
+        $('.navbar-toggler span').text('Свернуть')
+      else 
+        $('.navbar-toggler span').text('Фильтры')
+    });
   });
 </script>
