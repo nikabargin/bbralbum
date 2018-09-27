@@ -1,7 +1,7 @@
 
 <div class="navbar-expand-md" id="stick-head">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-bars"></i> Фильтры
+    <i class="fas fa-bars"></i> <span>Фильтры</span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <div class="navbar-nav">
@@ -106,7 +106,7 @@
 
 </div>
 
-<div id="content-block">
+<div id="content-block" class="next-block-on-main">
   <%= render(
     partial: 'skins/list',
     locals: { skins: @skins }
@@ -172,6 +172,13 @@ $(document).on("keypress", 'form', function (e) {
       }
     }
   });
+
+$(document).on("click", '.navbar-toggler', function () {
+  if ($('.navbar-toggler span').text() == 'Фильтры')
+    $('.navbar-toggler span').text('Свернуть')
+  else 
+    $('.navbar-toggler span').text('Фильтры')
+});
 
 </script>
 
