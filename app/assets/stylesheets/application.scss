@@ -40,6 +40,10 @@ body {
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
+textarea {
+	white-space: pre-wrap;
+}
+
 a {
 	color: #fff;
 }
@@ -183,6 +187,7 @@ strong {
 
 .skin-description {
 	font-weight: 300;
+	white-space: pre-line;
 }
 
 .skin-attributes {
