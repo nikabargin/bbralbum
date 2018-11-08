@@ -9,7 +9,7 @@ class Skin < ApplicationRecord
 	belongs_to :color
 	belongs_to :hardness
 
-	validates :name, :description, :video, presence: true
+	validates :name, :description, presence: true
 	validate :images_type
 	validate :cover_type
 
