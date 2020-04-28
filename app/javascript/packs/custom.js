@@ -61,7 +61,6 @@ document.addEventListener("turbolinks:load", function() {
     duration: 1000,
     easing: 'ease-in-out',
     delay: 200,
-    disable: 'mobile',
     once: 'false'
   });
 
