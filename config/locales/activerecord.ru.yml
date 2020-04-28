@@ -1,0 +1,65 @@
+ru:
+  activerecord:
+    models:
+      leather: 'Кожа'
+      admin: 'Администратор'
+    attributes:
+      leather:
+        status: 'Статус'
+        number: 'Номер'
+        name: 'Название'
+        description: 'Описание'
+        nature: 'Тип выделки'
+        hardness: 'Жесткость'
+        sheen: 'Блеск'
+        color1: 'Главный цвет'
+        color2: 'Второй цвет'
+        color3: 'Третий цвет'
+        texture: 'Рисунок'
+        mprotection: 'Влагозащита'
+        image: 'Обложка'
+        video_url: 'Видео URL'
+        video_id: 'Видео ID'
+      admin:
+        password: 'Пароль'
+        password_confirmation: 'Пароль ещё раз'
+        remember_me: 'Запомнить меня'
+    errors:
+      models:
+        leather:
+          attributes:
+            status:
+              blank: 'не может быть пустым'
+            number:
+              blank: 'не может быть пустым'
+            name:
+              blank: 'не может быть пустым'
+            description:
+              blank: 'не может быть пустым'
+              too_short: 'должно быть не меньше 100 знаков'
+            nature:
+              blank: 'не может быть пустым'
+            hardness:
+              blank: 'не может быть пустой'
+            sheen:
+              blank: 'не может быть пустым'
+            color1:
+              blank: 'не может быть пустым'
+            texture:
+              blank: 'не может быть пустым'
+            mprotection:
+              blank: 'не может быть пустой'
+            image:
+              blank: 'должна быть выбрана'
+        admin:
+          attributes:
+            email:
+              blank: 'не может быть пустым'
+            password:
+              blank: 'не может быть пустым'
+            password_confirmation:
+              confirmation: 'не верен'
+              
+                
+              
+

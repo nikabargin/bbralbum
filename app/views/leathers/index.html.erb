@@ -1,0 +1,69 @@
+  <aside class="filter" id="filterNav">
+    <%= form_for_filterrific @filterrific, html: {class: 'filter__container'} do |f| %>
+      <div class="filter__logo logo">
+        <%= link_to image_tag("logo.svg"), root_path, class: "logo__link "%>
+      </div>
+      
+      <div class="filter__search filter__row search">
+        <%= f.text_field(
+          :search_query,
+          class: 'filterrific-periodically-observed search__field', placeholder: "Поиск..."
+        ) %>
+        <%= image_tag("search.svg", {:class => "search__img"})  %>
+      </div>
+
+      <div class="filter__dropdown filter__row filter__color dropdown">
+        <label class="dropdown__label" for="filter_color">Цвет</label>
+        <%= f.select(
+          :with_color,
+          @filterrific.select_options[:with_color],
+          { include_blank: 'Любой'}, { :class => "dropdown__select selectpicker", :id => "filter_color" }
+        ) %>
+      </div>
+
+      <div class="filter__dropdown filter__row filter__nature dropdown">
+        <label class="dropdown__label" for="filter_nature">Тип выделки</label>
+        <%= f.select(
+          :with_nature,
+          @filterrific.select_options[:with_nature],
+          { include_blank: 'Любой'}, { :class => "dropdown__select selectpicker", :id => "filter_nature" }
+        ) %>
+      </div>
+
+      <div class="filter__dropdown filter__row filter__hardness dropdown">
+        <label class="dropdown__label" for="filter_hardness">Жесткость</label>
+        <%= f.select(
+          :with_hardness,
+          @filterrific.select_options[:with_hardness],
+          { include_blank: 'Любая'}, { :class => "dropdown__select selectpicker", :id => "filter_hardness" }
+        ) %>
+      </div>
+
+      <div class="filter__dropdown filter__row filter__sheen dropdown">
+        <label class="dropdown__label" for="filter_sheen">Блеск</label>
+        <%= f.select(
+          :with_sheen,
+          @filterrific.select_options[:with_sheen],
+          { include_blank: 'Любая'}, { :class => "dropdown__select selectpicker", :id => "filter_sheen" }
+        ) %>
+      </div>
+      
+      <div class="filter__row filter__clear">
+        <%= link_to(
+          'Сбросить все',
+          reset_filterrific_url, {:class => "filter__clear-link"}
+        ) %>
+      </div>
+    <% end %>
+  </aside>
+  <button class="filter-button" id="filterButton">
+    <span class="filter-button__text" id="filterText">Фильтры</span>
+    <%= image_tag("filter.svg", {:class => "filter-button__img", :id => "filterIcon"})  %>
+  </button>
+
+  <div class="filter-result">
+  <%= render(
+    partial: 'leathers/list',
+    locals: { leathers: @leathers }
+  ) %>
+  </div>

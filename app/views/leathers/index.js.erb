@@ -1,0 +1,4 @@
+<% js = escape_javascript(
+  render(partial: 'leathers/list', locals: { leathers: @leathers, lozad: 'lozad().observe()' })
+) %>
+$(".filter-result").html("<%= js %>");

@@ -1,0 +1,17 @@
+@font-face {
+	font-family: 'montserrat';
+	font-style: regular;
+	font-weight: 400;
+	src: url(asset-path('montserrat-regular.woff2')) format('woff2');
+}
+
+@font-face {
+	font-family: 'montserrat';
+	font-style: bold;
+	font-weight: 600;
+	src: url(asset-path('montserrat-semibold.woff2')) format('woff2');
+}
+
+ .sl-wrapper .sl-close {
+	background: url('cross.svg') no-repeat;
+ }

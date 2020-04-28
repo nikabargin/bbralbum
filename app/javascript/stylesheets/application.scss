@@ -1,0 +1,20 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~simplelightbox/src/simple-lightbox";
+@import "~bootstrap-select/sass/bootstrap-select";
+@import "~aos/src/sass/aos";
+
+
+// VARIABLES
+
+$whity: #fdfdfd;
+$shadow-main: 0 1px 3px rgba(0,0,0,0.12);
+$input-padding: 0.7rem 1rem;
+
+body {
+	font-family: montserrat;
+}
+
+@import 'general';
+@import 'modules';
+@import 'main';
+@import 'admin';

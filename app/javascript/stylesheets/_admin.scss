@@ -1,0 +1,90 @@
+.form-logo {
+	display: none;
+	@media (min-width: 1200px) {
+		display: block;
+		margin: 2rem 0 3rem;
+	}
+}
+
+.form {
+	min-height: 100vh;
+	padding: 2rem 0;
+	display: flex;
+	justify-content: center;
+	&__container {
+		width: 50rem;
+	}
+	&__row {
+		display: flex;
+		.form__group {
+			&:first-child {
+				margin-right: 2rem;
+			}
+		}
+	}
+	&__group {
+		display: flex;
+		flex-direction: column;
+		padding: 1.5rem 0;
+		label {
+			font-size: 0.9rem;
+		}
+	}
+	&__column {
+
+	}
+	&__description {
+		width: 25rem;
+		textarea {
+			max-width: 100%;
+			height: 100%;
+		}
+	}
+	&__advice {
+		font-size: 0.8rem;
+	}
+	&__selects {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 2rem;
+	}
+	&__image {
+		width: 7rem;
+		text-align: center;
+		margin-right: 2rem;
+		img {
+			border-radius: 50%;
+		}
+		small {
+			font-size: 0.9rem;
+		}
+	}
+	&__submit {
+		text-align: center;
+		input {
+			margin: 2rem;	
+		}
+	}
+}
+
+.login {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	&__container {
+		
+	}
+	&__group {
+		margin-bottom: 2rem;
+		label {
+			font-size: 0.9rem;
+		}
+	}
+	&__remember {
+		display: none;
+	}
+	&__button {
+		text-align: center;
+	}
+}

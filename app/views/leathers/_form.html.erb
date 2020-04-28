@@ -1,0 +1,130 @@
+<div class="wrapper">
+  <div class="form-logo logo">
+    <%= link_to image_tag("logo.svg"), root_path, class: "logo__link "%>  
+  </div>
+</div>
+
+<div class="form">
+  <%= form_with(model: leather, local: true, html: {class: "form__container"}) do |form| %>
+    <div class="form__group">
+      <%= form.label :status, class: "form__label" %>
+      <%= form.text_field :status, class: "form__field", maxlength: "20", required: true %>
+      <p class="form__advice">Emoji: Win + Точка | ПКМ -> Эмодзи</p>
+    </div>
+    <div class="form__row">
+      <div class="form__group form__number">
+        <%= form.label :number, class: "form__label" %>
+        <%= form.text_field :number, class: "form__field", maxlength: "6", required: true %>
+      </div>
+      <div class="form__group form__name">
+        <%= form.label :name, class: "form__label" %>
+        <%= form.text_field :name, class: "form__field", maxlength: "20", required: true %>
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__group form__description">
+        <%= form.label :description, class: "form__label" %>
+        <%= form.text_area :description, class: "form__field", minlength: "100", maxlength: "190", required: true %>
+      </div>
+      <div class="form__column">
+        <div class="form__group">
+          <%= form.label :texture, class: "form__label" %>
+          <%= form.text_field :texture, class: "form__field", maxlength: "20", required: true %>
+        </div>
+        <div class="form__group">
+          <%= form.label :mprotection, class: "form__label" %>
+          <%= form.text_field :mprotection, class: "form__field", maxlength: "20", required: true %>
+        </div>
+      </div>
+    </div>
+    <div class="form__selects">
+      <div class="form__group">
+        <div class="form__dropdown dropdown">
+          <%= form.label :nature, class: "form__label", for: "form_nature" %>
+          <%= form.select(
+            :nature, Leather.natures, { include_blank: 'Выбери' }, { :class => "dropdown__select selectpicker", :id => "form_nature", :required => true }
+          ) %>
+        </div>
+      </div>
+      <div class="form__group">
+        <div class="form__dropdown dropdown">
+          <%= form.label :hardness, class: "form__label", for: "form_hardness" %>
+          <%= form.select(
+            :hardness, Leather.hardness, { include_blank: 'Выбери' }, { :class => "dropdown__select selectpicker", :id => "form_hardness", :required => true }
+          ) %>
+        </div>
+      </div>
+      <div class="form__group">
+        <div class="form__dropdown dropdown">
+          <%= form.label :sheen, class: "form__label", for: "form_sheen" %>
+          <%= form.select(
+            :sheen, Leather.sheen, { include_blank: 'Выбери' }, { :class => "dropdown__select selectpicker", :id => "form_sheen", :required => true }
+          ) %>
+        </div>
+      </div>
+    </div>
+    <div class="form__selects">
+      <div class="form__group">
+        <div class="form__dropdown dropdown">
+          <%= form.label :color1, class: "form__label", for: "form_color1" %>
+          <%= form.select(
+            :color1, Leather.colors, { include_blank: 'Выбери' }, { :class => "dropdown__select selectpicker", :id => "form_color1", :required => true }
+          ) %>
+        </div>
+      </div>
+      <div class="form__group">
+        <div class="form__dropdown dropdown">
+          <%= form.label :color2, class: "form__label", for: "form_color2" %>
+          <%= form.select(
+            :color2, Leather.colors, { include_blank: 'Выбери' }, { :class => "dropdown__select selectpicker", :id => "form_color2" }
+          ) %>
+        </div>
+      </div>
+      <div class="form__group">
+        <div class="form__dropdown dropdown">
+          <%= form.label :color3, class: "form__label", for: "form_color3" %>
+          <%= form.select(
+            :color3, Leather.colors, { include_blank: 'Выбери' }, { :class => "dropdown__select selectpicker", :id => "form_color3" }
+          ) %>
+        </div>
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__group form__videourl">
+        <%= form.label :video_url, class: "form__label" %>
+        <%= form.text_field :video_url, class: "form__field" %>
+      </div>
+      <div class="form__group form__videoid">
+        <%= form.label :video_id, class: "form__label" %>
+        <%= form.text_field :video_id, class: "form__field" %>
+      </div>
+    </div>
+    <% if current_page?(new_leather_path) %>
+      <div class="form__group">
+        <div class="file-drop-area">
+          <span class="fake-btn">Выбрать обложку</span>
+          <span class="file-msg"></span>
+          <%= form.file_field :image, class: "form__field file-input" %>
+        </div>
+      </div>
+    <% else %>
+      <div class="form__group">
+        <div class="form__row">
+          <div class="form__image">
+            <%= image_tag(leather.sq_thumb) %>
+            <small>Текущая</small>
+          </div> 
+          <div class="file-drop-area">
+            <span class="fake-btn">Обновить обложку</span>
+            <span class="file-msg"></span>
+            <%= form.file_field :image, class: "form__field file-input" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="form__submit">
+      <%= link_to 'Отмена', leathers_path, :class => "form__button" %>
+      <%= form.submit "Сохранить", :class => "form__button" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <%= csrf_meta_tags %>
+    <%= display_meta_tags site: 'Альбом кож', reverse: true %>
+    <meta name="viewport" content="width=device-width">
+    <meta name="turbolinks-cache-control" content="no-preview">
+    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

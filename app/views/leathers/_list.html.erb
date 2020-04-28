@@ -1,0 +1,42 @@
+<section class="catalog" id="filterrific_results">
+  <div class="catalog__wrapper wrapper">
+    <div class="catalog__logo logo">
+      <%= link_to image_tag("logo.svg"), root_path, class: "logo__link "%>
+    </div>
+    <div class="catalog__common">
+      <p class="catalog__amount">
+        <%= page_entries_info leathers %>
+      </p>
+      <div class="catalog__settings">
+        <% if current_admin %>
+          <%= link_to new_leather_path do %>
+            <%= image_tag("add.svg") %>
+          <% end %>
+        <% end %>
+      </div>  
+    </div>
+    <div class="catalog__cards" data-url="<%= sort_leathers_path %>">
+      <% @leathers.each do |leather| %>
+        <%= link_to leather, {:class => "catalog__link", :id => dom_id(leather), 'data-aos' => "fade-up" } do %>
+          <div class="catalog__card card">
+            <div class="card__status"><%= leather.status %></div>
+            <div class="card__img">
+              <%= image_tag('placeholder.gif', {'data-src' => url_for(leather.sq_thumb), 'class' => 'lozad', 'data-aos' => "fade-in"}) if leather.image.attached? %>
+            </div>
+            <div class="card__info">
+              <div class="card__name"><%= leather.name %></div>
+              <div class="card__num"><%= leather.number %></div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%= will_paginate leathers %>
+
+<script>
+  var observer = lozad()
+  observer.observe()
+</script>
