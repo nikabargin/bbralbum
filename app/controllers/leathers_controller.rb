@@ -41,7 +41,7 @@ class LeathersController < ApplicationController
   # GET /leathers/1
   # GET /leathers/1.json
   def show
-    set_meta_tags title: @leather.number + "." + @leather.name,
+    set_meta_tags title: @leather.number + ". " + @leather.name,
                   description: @leather.description,
                   og: {
                     title: @leather.number + "." + @leather.name,

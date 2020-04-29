@@ -1,5 +1,5 @@
 <div class="leather-back leather-back_fullscreen" data-aos="fade-down-left" data-aos-delay="1000" data-aos-duration="2000">
-  <%= link_to image_tag(@leather.sq_big), url_for(@leather.sq_full), {:class => "leather-back__link"} if @leather.image.attached? %>
+  <%= link_to image_tag(@leather.sq_big, alt: "Обложка кожи #{@leather.number}"), url_for(@leather.sq_full), {:class => "leather-back__link"} if @leather.image.attached? %>
 </div>
 <div class="leather"> 
   <div class="wrapper">
@@ -16,8 +16,8 @@
         <%= @leather.number %>. <%= @leather.name %>
         <% if current_admin %>
         <div class="leather__settings">
-            <%= link_to image_tag("edit.svg"), edit_leather_path(@leather) %>
-            <%= link_to image_tag("remove.svg"), leather_path(@leather),
+            <%= link_to image_tag("edit.svg",alt: "Изменить кожу", title: "Изменить кожу"), edit_leather_path(@leather) %>
+            <%= link_to image_tag("remove.svg",alt: "Удалить кожу", title: "Удалить кожу"), leather_path(@leather),
               method: :delete, class: "remove-leather" %>
         </div>
         <% end %>
@@ -33,7 +33,7 @@
           <span class="fact__value"><%= @leather.texture %></span>
         </li>
         <li class="leather__fact fact" data-aos="fade" data-aos-delay="700">
-          <strong class="fact__title">Поверхность:</strong>
+          <strong class="fact__title">Блеск:</strong>
           <span class="fact__value"><%= @leather.sheen %></span>
         </li>
         <li class="leather__fact fact" data-aos="fade" data-aos-delay="800">
@@ -97,22 +97,22 @@
           <div class="gallery__photos">
             <% @leather.leather_photos.each do |photo| %>
             <div class="gallery__img" data-aos="fade">
-              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad'}), url_for(@leather.full(photo)) %>
+              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad', 'alt' =>"Фото кожи"}), url_for(@leather.full(photo)) %>
             </div>
             <% end %>
             <% @leather.shoes_photos.each do |photo| %>
             <div class="gallery__img" data-aos="fade">
-              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad'}), url_for(@leather.full(photo)) %>
+              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad', 'alt' =>"Фото обуви с кожей"}), url_for(@leather.full(photo)) %>
             </div>
             <% end %>
             <% @leather.bags_photos.each do |photo| %>
             <div class="gallery__img" data-aos="fade">
-              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad'}), url_for(@leather.full(photo)) %>
+              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad', 'alt' =>"Фото сумки с кожей"}), url_for(@leather.full(photo)) %>
             </div>
             <% end %>
             <% @leather.other_photos.each do |photo| %>
             <div class="gallery__img" data-aos="fade">
-              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad'}), url_for(@leather.full(photo)) %>
+              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad', 'alt' =>"Фото кожи на других вещах"}), url_for(@leather.full(photo)) %>
             </div>
             <% end %>
           </div>
@@ -133,7 +133,7 @@
           <div class="gallery__photos">
             <% @leather.leather_photos.each do |photo| %>
             <div class="gallery__img" data-aos="fade">
-              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad'}), url_for(@leather.full(photo)) %>
+              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad', 'alt' =>"Фото кожи"}), url_for(@leather.full(photo)) %>
               <% if current_admin %>
                 <%= link_to delete_image_attachment_leather_url(photo.id), method: :delete, remote: true, class: "delete gallery__remove" do %>
                   <%= image_tag("remove-w.svg") %>
@@ -159,7 +159,7 @@
           <div class="gallery__photos">
             <% @leather.shoes_photos.each do |photo| %>
             <div class="gallery__img" data-aos="fade">
-              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad'}), url_for(@leather.full(photo)) %>
+              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad', 'alt' =>"Фото обуви с кожей"}), url_for(@leather.full(photo)) %>
               <% if current_admin %>
                 <%= link_to delete_image_attachment_leather_url(photo.id), method: :delete, remote: true, class: "delete gallery__remove" do %>
                   <%= image_tag("remove-w.svg") %>
@@ -185,7 +185,7 @@
           <div class="gallery__photos">
             <% @leather.bags_photos.each do |photo| %>
             <div class="gallery__img" data-aos="fade">
-              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad'}), url_for(@leather.full(photo)) %>
+              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad', 'alt' =>"Фото сумки с кожей"}), url_for(@leather.full(photo)) %>
               <% if current_admin %>
                 <%= link_to delete_image_attachment_leather_url(photo.id), method: :delete, remote: true, class: "delete gallery__remove" do %>
                   <%= image_tag("remove-w.svg") %>
@@ -211,7 +211,7 @@
           <div class="gallery__photos">
             <% @leather.other_photos.each do |photo| %>
             <div class="gallery__img" data-aos="fade">
-              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad'}), url_for(@leather.full(photo)) %>
+              <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad', 'alt' =>"Фото кожи на других вещах"}), url_for(@leather.full(photo)) %>
               <% if current_admin %>
                 <%= link_to delete_image_attachment_leather_url(photo.id), method: :delete, remote: true, class: "delete gallery__remove" do %>
                   <%= image_tag("remove-w.svg") %>

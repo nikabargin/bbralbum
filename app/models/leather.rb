@@ -92,10 +92,13 @@ class Leather < ApplicationRecord
 	     	['Светло-коричневый', {'data-content'=>"<span class='circle light-brown'></span>Светло-коричневый"}],
 	     	['Тёмно-коричневый', {'data-content'=>"<span class='circle dark-brown'></span>Тёмно-коричневый"}],
 	     	['Хаки', {'data-content'=>"<span class='circle khaki'></span>Хаки"}],
+	     	['Рыжий', {'data-content'=>"<span class='circle orange'></span>Рыжий"}],
+	     	['Жёлтый', {'data-content'=>"<span class='circle yellow'></span>Жёлтый"}],
 	     	['Зелёный', {'data-content'=>"<span class='circle green'></span>Зелёный"}],
 	     	['Серый', {'data-content'=>"<span class='circle gray'></span>Серый"}],
 	     	['Синий', {'data-content'=>"<span class='circle blue'></span>Синий"}],
 	     	['Красный', {'data-content'=>"<span class='circle red'></span>Красный"}],
+	     	['Розовый', {'data-content'=>"<span class='circle pink'></span>Розовый"}],
 	     	['Диско', {'data-content'=>"<span class='circle disco'></span>Диско"}]
 	     	
 
@@ -103,7 +106,7 @@ class Leather < ApplicationRecord
 	end
 
 	def self.natures
-	    ['Нубук','Хорс','Спилок']
+	    ['Лицевая', 'Хорс жированный', 'Хорс Вощеный', 'Краст', 'Лак', 'Спилок', 'Нубук', 'Велюр', 'Юфть']
 	end
 
 	def self.hardness

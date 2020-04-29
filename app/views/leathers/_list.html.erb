@@ -1,7 +1,7 @@
 <section class="catalog" id="filterrific_results">
   <div class="catalog__wrapper wrapper">
     <div class="catalog__logo logo">
-      <%= link_to image_tag("logo.svg"), root_path, class: "logo__link "%>
+      <%= link_to image_tag("logo.svg"), root_path, class: "logo__link", alt: "Логотип Альбома Кож" %>
     </div>
     <div class="catalog__common">
       <p class="catalog__amount">
@@ -10,7 +10,7 @@
       <div class="catalog__settings">
         <% if current_admin %>
           <%= link_to new_leather_path do %>
-            <%= image_tag("add.svg") %>
+            <%= image_tag("add.svg", alt:"Добавить кожу", title: "Добавить кожу") %>
           <% end %>
         <% end %>
       </div>  
@@ -21,7 +21,7 @@
           <div class="catalog__card card">
             <div class="card__status"><%= leather.status %></div>
             <div class="card__img">
-              <%= image_tag('placeholder.gif', {'data-src' => url_for(leather.sq_thumb), 'class' => 'lozad', 'data-aos' => "fade-in"}) if leather.image.attached? %>
+              <%= image_tag('placeholder.gif', {'data-src' => url_for(leather.sq_thumb), 'class' => 'lozad', 'data-aos' => "fade-in", "alt" => "Обложка кожи #{leather.number}"}) if leather.image.attached? %>
             </div>
             <div class="card__info">
               <div class="card__name"><%= leather.name %></div>
