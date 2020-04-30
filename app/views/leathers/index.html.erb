@@ -1,7 +1,7 @@
   <aside class="filter" id="filterNav">
     <%= form_for_filterrific @filterrific, html: {class: 'filter__container'} do |f| %>
       <div class="filter__logo logo">
-        <%= link_to image_tag("logo.svg"), root_path, class: "logo__link", alt: "Логотип Альбома Кож" %>
+        <%= link_to image_tag("logo.svg", alt: "Логотип Альбома Кож"), root_path, class: "logo__link" %>
       </div>
       
       <div class="filter__search filter__row search">
