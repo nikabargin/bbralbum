@@ -69,6 +69,10 @@ class Leather < ApplicationRecord
 		return self.image.variant(resize:'800x800', gravity:'center', crop: "1:1", quality: '85').processed
 	end
 
+	def sq_mobile
+		return self.image.variant(resize:'1000x1000', gravity:'center', crop: "1:1", quality: '70').processed
+	end
+
 	def sq_big
 		return self.image.variant(resize:'1800x1800', gravity:'center', crop: "1:1", quality: '70').processed
 	end

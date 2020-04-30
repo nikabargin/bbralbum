@@ -1,4 +1,7 @@
-<div class="leather-back leather-back_fullscreen" data-aos="fade-down-left" data-aos-delay="1000" data-aos-duration="2000">
+<div class="leather-back leather-back_fullscreen only-mobile" data-aos="fade-down-left" data-aos-delay="1000" data-aos-duration="2000">
+  <%= link_to image_tag(@leather.sq_mobile, alt: "Обложка кожи #{@leather.number}"), url_for(@leather.sq_big), {:class => "leather-back__link"} if @leather.image.attached? %>
+</div>
+<div class="leather-back leather-back_fullscreen only-desktop" data-aos="fade-down-left" data-aos-delay="1000" data-aos-duration="2000">
   <%= link_to image_tag(@leather.sq_big, alt: "Обложка кожи #{@leather.number}"), url_for(@leather.sq_full), {:class => "leather-back__link"} if @leather.image.attached? %>
 </div>
 <div class="leather"> 

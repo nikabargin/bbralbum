@@ -114,6 +114,20 @@ input[type="submit"] {
 	}
 }
 
+.only-mobile {
+	display: block;
+	@media(min-width: 768px) {
+		display: none;
+	}
+}
+
+.only-desktop {
+	display: none;
+	@media(min-width: 768px) {
+		display: block;
+	}	
+}
+
 /**** Стили для телефонов до 575px ****/
 
 @media only screen
