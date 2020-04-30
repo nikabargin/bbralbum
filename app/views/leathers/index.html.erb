@@ -1,7 +1,7 @@
   <aside class="filter" id="filterNav">
     <%= form_for_filterrific @filterrific, html: {class: 'filter__container'} do |f| %>
       <div class="filter__logo logo">
-        <%= link_to image_tag("logo.svg"), root_path, class: "logo__link "%>
+        <%= link_to image_tag("logo.svg"), root_path, class: "logo__link", alt: "Логотип Альбома Кож" %>
       </div>
       
       <div class="filter__search filter__row search">
@@ -9,7 +9,7 @@
           :search_query,
           class: 'filterrific-periodically-observed search__field', placeholder: "Поиск..."
         ) %>
-        <%= image_tag("search.svg", {:class => "search__img"})  %>
+        <%= image_tag("search.svg", {:class => "search__img", :alt => "Иконка поиска"})  %>
       </div>
 
       <div class="filter__dropdown filter__row filter__color dropdown">
@@ -58,7 +58,7 @@
   </aside>
   <button class="filter-button" id="filterButton">
     <span class="filter-button__text" id="filterText">Фильтры</span>
-    <%= image_tag("filter.svg", {:class => "filter-button__img", :id => "filterIcon"})  %>
+    <%= image_tag("filter.svg", {:class => "filter-button__img", :id => "filterIcon", :alt => "Иконка поиска"})  %>
   </button>
 
   <div class="filter-result">

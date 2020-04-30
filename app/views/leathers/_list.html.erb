@@ -1,7 +1,7 @@
-<section class="catalog" id="filterrific_results">
+<div class="catalog" id="filterrific_results">
   <div class="catalog__wrapper wrapper">
     <div class="catalog__logo logo">
-      <%= link_to image_tag("logo.svg"), root_path, class: "logo__link", alt: "Логотип Альбома Кож" %>
+      <%= link_to image_tag("logo.svg", alt: "Логотип Альбома Кож"), root_path, class: "logo__link" %>
     </div>
     <div class="catalog__common">
       <p class="catalog__amount">
@@ -32,7 +32,7 @@
       <% end %>
     </div>
   </div>
-</section>
+</div>
 
 <%= will_paginate leathers %>
 
