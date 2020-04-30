@@ -52,6 +52,8 @@
       </ul>
     </div>
   </div>
+  <% if !@leather.leather_photos.attached? && !@leather.shoes_photos.attached? && !@leather.bags_photos.attached? && !@leather.other_photos.attached? && !current_admin %>
+  <% else %>
     <div class="leather__gallery gallery" id="gallery">
       <ul class="gallery__nav nav" id="gallery__nav-tab">
         <li class="gallery__group">
@@ -229,6 +231,7 @@
         </div>
       </div>
     </div>
+    <% end %>
   </div>
 
 <script>
