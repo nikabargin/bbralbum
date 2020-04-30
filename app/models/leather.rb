@@ -78,7 +78,7 @@ class Leather < ApplicationRecord
 	end
 
 	def thumb input
-		return input.variant(resize: "800", quality: "75").processed
+		return input.variant(resize: "800", quality: "70").processed
 	end
 
 	def full input
