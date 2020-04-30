@@ -93,8 +93,6 @@ class Leather < ApplicationRecord
 	    [
 	    	['Чёрный', {'data-content'=>"<span class='circle black'></span>Чёрный"}],
 	    	['Коричневый', {'data-content'=>"<span class='circle brown'></span>Коричневый"}],
-	     	['Светло-коричневый', {'data-content'=>"<span class='circle light-brown'></span>Светло-коричневый"}],
-	     	['Тёмно-коричневый', {'data-content'=>"<span class='circle dark-brown'></span>Тёмно-коричневый"}],
 	     	['Хаки', {'data-content'=>"<span class='circle khaki'></span>Хаки"}],
 	     	['Рыжий', {'data-content'=>"<span class='circle orange'></span>Рыжий"}],
 	     	['Жёлтый', {'data-content'=>"<span class='circle yellow'></span>Жёлтый"}],
