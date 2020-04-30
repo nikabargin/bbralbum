@@ -66,7 +66,7 @@ class Leather < ApplicationRecord
 	}
 
 	def sq_thumb
-		return self.image.variant(resize:'1200x1200', gravity:'center', crop: "1:1", quality: '80').processed
+		return self.image.variant(resize:'1000x1000', gravity:'center', crop: "1:1", quality: '85').processed
 	end
 
 	def sq_big
