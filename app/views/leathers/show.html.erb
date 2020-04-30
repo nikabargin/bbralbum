@@ -45,7 +45,7 @@
         </li>               
         <li class="leather__fact fact" data-aos="fade" data-aos-delay="900">
           <strong class="fact__title">Цвет:</strong>
-          <span class="fact__value"><%= @leather.color1 %><br><%= @leather.color2 if @leather.color2.present? %>
+          <span class="fact__value"><%= @leather.color1 %><%= ", " + @leather.color2 if @leather.color2.present? %>
           </span>
         </li>
         <li class="leather__fact fact" data-aos="fade" data-aos-delay="1000">
