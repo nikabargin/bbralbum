@@ -95,6 +95,12 @@
       <div class="tab-content" id="gallery__nav-tabContent">
         <div class="tab-pane fade show active" id="gallery__nav-all">
           <div class="gallery__photos">
+            <% if @leather.video_url.present? && @leather.video_id.present? %>
+              <div class="gallery__img video" data-aos="fade">
+                <%= image_tag('placeholder.gif', {'data-src' => url_for(@leather.sq_thumb), 'class' => 'lozad', 'alt' =>"Обложка видео с кожей"}) %>
+                <%= link_to 'Посмотреть видео', @leather.video_url, {"data-youtube-id" => "#{@leather.video_id}", :class => "video__play video-thumb js-trigger-video-modal button button_animate"} %>
+              </div>
+            <% end %>
             <% @leather.leather_photos.each do |photo| %>
             <div class="gallery__img" data-aos="fade">
               <%= link_to image_tag('placeholder.gif', {'data-src' => url_for(@leather.thumb(photo)), 'class' => 'lozad', 'alt' =>"Фото кожи"}), url_for(@leather.full(photo)) %>
@@ -229,3 +235,22 @@
   var observer = lozad()
   observer.observe()
 </script>
+
+<!-- video modal -->
+  <div class="video-modal">
+    <div id="video-modal-content" class="video-modal-content">
+       <iframe 
+          id="youtube" 
+          width="100%" 
+          height="100%" 
+          frameborder="0" 
+          allow="autoplay" 
+          allowfullscreen 
+          src=
+        ></iframe>
+        <a href="#" class="close-video-modal">
+          <%= image_tag 'cross.svg', alt: 'Закрыть видео' %>
+        </a>
+      </div>
+    <div class="overlay"></div>
+</div>
