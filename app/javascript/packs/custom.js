@@ -60,7 +60,7 @@ document.addEventListener("turbolinks:load", function() {
     offset: 0,
     duration: 1000,
     easing: 'ease-in-out',
-    delay: 200,
+    delay: 100,
     once: 'false'
   });
 

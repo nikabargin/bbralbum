@@ -116,7 +116,7 @@ class Leather < ApplicationRecord
 	end
 
 	def self.hardness
-	    ['Низкая', 'Средняя', 'Высокая']
+	    ['Мягкая', 'Средняя', 'Жесткая']
 	end
 
 	def self.sheen
