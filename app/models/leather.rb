@@ -17,6 +17,8 @@ class Leather < ApplicationRecord
 	validates :mprotection, presence: true
 	validates :image, presence: true
 
+	self.per_page = 100
+
 	extend FriendlyId
 	friendly_id :number, use: :slugged
 
