@@ -1,1 +1,10 @@
-# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+User-agent: *
+Disallow: /admins
+Sitemap: https://bbralbum.com/sitemap.xml.gz
+
+User-agent: Googlebot
+Disallow: /admins
+
+User-agent: Yandex
+Disallow: /admins
+Host: bbralbum.com

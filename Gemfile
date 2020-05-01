@@ -31,6 +31,7 @@ gem 'acts_as_list'
 gem 'friendly_id', '~> 5.2.4'
 gem 'meta-tags'
 gem 'devise'
+gem 'sitemap_generator', '~> 5.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
