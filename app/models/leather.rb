@@ -93,12 +93,12 @@ class Leather < ApplicationRecord
 
 	def self.colors
 	    [
-	    	['Чёрный', {'data-content'=>"<span class='circle black'></span>Чёрный"}],
+	    	['Черный', {'data-content'=>"<span class='circle black'></span>Черный"}],
 	    	['Коричневый', {'data-content'=>"<span class='circle brown'></span>Коричневый"}],
 	     	['Хаки', {'data-content'=>"<span class='circle khaki'></span>Хаки"}],
 	     	['Рыжий', {'data-content'=>"<span class='circle orange'></span>Рыжий"}],
-	     	['Жёлтый', {'data-content'=>"<span class='circle yellow'></span>Жёлтый"}],
-	     	['Зелёный', {'data-content'=>"<span class='circle green'></span>Зелёный"}],
+	     	['Желтый', {'data-content'=>"<span class='circle yellow'></span>Желтый"}],
+	     	['Зеленый', {'data-content'=>"<span class='circle green'></span>Зеленый"}],
 	     	['Серый', {'data-content'=>"<span class='circle gray'></span>Серый"}],
 	     	['Белый', {'data-content'=>"<span class='circle white'></span>Белый"}],
 	     	['Бежевый', {'data-content'=>"<span class='circle beige'></span>Бежевый"}],
