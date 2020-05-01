@@ -1,10 +1,10 @@
 User-agent: *
-Disallow: /admins
+Disallow: /admin
 Sitemap: https://bbralbum.com/sitemap.xml.gz
 
 User-agent: Googlebot
-Disallow: /admins
+Disallow: /admin
 
 User-agent: Yandex
-Disallow: /admins
+Disallow: /admin
 Host: bbralbum.com
