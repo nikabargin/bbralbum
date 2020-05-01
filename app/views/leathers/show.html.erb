@@ -15,7 +15,7 @@
       <h2 class="leather__subtitle" data-aos="fade">
         <%= @leather.status %>
       </h2>
-      <h1 class="leather__title" data-aos="fade" data-aos-delay="300">
+      <h1 class="leather__title" data-aos="fade" data-aos-delay="200">
         <%= @leather.number %>. <%= @leather.name %>
         <% if current_admin %>
         <div class="leather__settings">
@@ -25,30 +25,30 @@
         </div>
         <% end %>
       </h1>
-      <p class="leather__desc" data-aos="fade" data-aos-delay="400"><%= @leather.description %></p>
+      <p class="leather__desc" data-aos="fade" data-aos-delay="300"><%= @leather.description %></p>
       <ul class="leather__facts">
-        <li class="leather__fact fact" data-aos="fade" data-aos-delay="500">
+        <li class="leather__fact fact" data-aos="fade" data-aos-delay="400">
           <strong class="fact__title">Тип выделки:</strong>
           <span class="fact__value"><%= @leather.nature %></span>
         </li>
-        <li class="leather__fact fact" data-aos="fade" data-aos-delay="600">
+        <li class="leather__fact fact" data-aos="fade" data-aos-delay="500">
           <strong class="fact__title">Рисунок:</strong>
           <span class="fact__value"><%= @leather.texture %></span>
         </li>
-        <li class="leather__fact fact" data-aos="fade" data-aos-delay="700">
+        <li class="leather__fact fact" data-aos="fade" data-aos-delay="600">
           <strong class="fact__title">Блеск:</strong>
           <span class="fact__value"><%= @leather.sheen %></span>
         </li>
-        <li class="leather__fact fact" data-aos="fade" data-aos-delay="800">
+        <li class="leather__fact fact" data-aos="fade" data-aos-delay="700">
           <strong class="fact__title">Жёсткость:</strong>
           <span class="fact__value"><%= @leather.hardness %></span>
         </li>               
-        <li class="leather__fact fact" data-aos="fade" data-aos-delay="900">
+        <li class="leather__fact fact" data-aos="fade" data-aos-delay="800">
           <strong class="fact__title">Цвет:</strong>
           <span class="fact__value"><%= @leather.color1 %><%= ", " + @leather.color2 if @leather.color2.present? %>
           </span>
         </li>
-        <li class="leather__fact fact" data-aos="fade" data-aos-delay="1000">
+        <li class="leather__fact fact" data-aos="fade" data-aos-delay="900">
           <strong class="fact__title">Влагозащита:</strong>
           <span class="fact__value"><%= @leather.mprotection %></span>
         </li>
