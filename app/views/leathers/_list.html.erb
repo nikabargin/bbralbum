@@ -17,11 +17,11 @@
     </div>
     <div class="catalog__cards" data-url="<%= sort_leathers_path %>">
       <% @leathers.each do |leather| %>
-        <%= link_to leather, {:class => "catalog__link", :id => dom_id(leather)} do %>
+        <%= link_to leather, {:class => "catalog__link", :id => dom_id(leather), 'data-aos' => "fade-up" } do %>
           <div class="catalog__card card">
             <div class="card__status"><%= leather.status %></div>
             <div class="card__img">
-              <%= image_tag('placeholder.gif', {'data-src' => url_for(leather.sq_thumb), 'class' => 'lozad', "alt" => "Обложка кожи #{leather.number}"}) if leather.image.attached? %>
+              <%= image_tag('placeholder.gif', {'data-src' => url_for(leather.sq_thumb), 'class' => 'lozad', 'data-aos' => "fade-in", "alt" => "Обложка кожи #{leather.number}"}) if leather.image.attached? %>
             </div>
             <div class="card__info">
               <div class="card__name"><%= leather.name %></div>
