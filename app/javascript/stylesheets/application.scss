@@ -3,6 +3,20 @@
 @import "~bootstrap-select/sass/bootstrap-select";
 @import "~aos/src/sass/aos";
 
+@font-face {
+	font-family: 'montserrat';
+	font-style: regular;
+	font-weight: 400;
+	src: url('/fonts/montserrat-regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'montserrat';
+	font-style: bold;
+	font-weight: 600;
+	src: url('/fonts/montserrat-semibold.woff2') format('woff2');
+}
+
 // VARIABLES
 
 $whity: #fdfdfd;
