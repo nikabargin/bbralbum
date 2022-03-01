@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'will_paginate', '~> 3.1.0'
 gem 'filterrific'
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 
 # Custom gems
 gem 'acts_as_list'
